@@ -1,0 +1,19 @@
+<div class="large-box">
+  <h1>NEW GAME</h1>
+    <div class="game-board">
+      <% @letters.each do |variable| %>
+        <p class="letter">
+          <%= variable %>
+        </p>
+      <% end %>
+    </div>
+    <p>What is the longest word you can find?</p>
+      <form class="form-inline" action="/score">
+        <%= hidden_field_tag :letters, @letters %>
+        <%= hidden_field_tag :time, Time.now %>
+        <div class="form-group mb-2">
+          <input type="text" name="word">
+        </div>
+      <button class="letter" id="less-padding" type="submit" value="Play!">Play!</button>
+    </form>
+</div>
